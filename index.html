@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function sumPrice() {
+   				var priceText = document.getElementById("priceText").value;
+
+                var prices = priceText.split("，");
+                
+                var priceSum = 0;
+                prices.forEach(price=>{
+                    priceSum+=parseInt(price);
+                })
+                document.getElementById("lastPriceSum").innerHTML = document.getElementById("priceSum").innerHTML;
+   				document.getElementById("priceSum").innerHTML = priceSum;
+            }
+            
+            function clean(){
+                var priceText = document.getElementById("priceText").value="";
+                // document.getElementById("priceSum").innerHTML = "";
+            }
+		</script>
+	</head>
+
+	<body>
+
+		<h2>计算总价</h2>
+
+		<textarea id="priceText" rows="10" cols="30"></textarea>
+        <br>
+		<button type="button" onclick="sumPrice()">计算总价</button>
+        <button type="button" onclick="clean()">清空</button>
+		<h2 id="priceSum"></h2>
+        <h3 id="lastPriceSum"></h3>
+	</body>
+</html>
