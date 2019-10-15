@@ -1,26 +1,26 @@
 <h2>计算总价</h2>
 
-<!-- <textarea id="priceText" rows="10" cols="30"></textarea>
-<br>
-<button type="button" onclick="sumPrice()">计算总价</button>
-<button type="button" onclick="clean()">清空</button>
-<h2 id="priceSum"></h2>
-<h3 id="lastPriceSum"></h3> -->
 
-<mat-form-field appearance="outline">
-  <mat-label>please input price text</mat-label>
-  <textarea matInput cdkTextareaAutosize=true cdkAutosizeMinRows="10" placeholder="price text" [(ngModel)]="priceText"></textarea>
-  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Hint</mat-hint> -->
-</mat-form-field>
-<p>
+<div class="body">
+  <div class="center display-area">
+    <h3>{{lastPriceSum}}</h3>
+    <h2>{{priceSum}}</h2>
+  </div>
+  <div class="center">
+    <mat-form-field appearance="outline">
+      <mat-label>please input price text</mat-label>
+      <textarea matInput cdkTextareaAutosize=true cdkAutosizeMinRows="10" placeholder="price text"
+                [(ngModel)]="priceText"></textarea>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  </div>
+
+  <div class="center">
     <button mat-fab color="primary" (click)="sumPrice()">计算</button>
-      
     <button mat-fab color="warn" (click)="clear()">清空</button>
-</p>
+  </div>
 
-<h2>{{priceSum}}</h2>
-<h3>{{lastPriceSum}}</h3>
-
+</div>
 
 

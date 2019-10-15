@@ -1,32 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-	selector: 'app-price-sum',
-	templateUrl: './price-sum.component.html',
-	styleUrls: ['./price-sum.component.scss']
+  selector: 'app-price-sum',
+  templateUrl: './price-sum.component.html',
+  styleUrls: ['./price-sum.component.scss']
 })
 export class PriceSumComponent implements OnInit {
 
-	priceText: string;
+  priceText: string;
 
-	priceSum: number;
+  priceSum: number;
 
-	lastPriceSum:number;
+  lastPriceSum: number;
 
-	constructor() { }
+  constructor() {
+  }
 
-	ngOnInit() {
-	}
+  ngOnInit() {
+  }
 
-	sumPrice() {
-		this.lastPriceSum = this.priceSum;
-		let priceSum = 0;
-		this.priceText.split("，").filter(price=>price!="").map(price => parseInt(price)).forEach(price => priceSum += price);
-		this.priceSum = priceSum;
-	}
+  sumPrice() {
+    this.lastPriceSum = this.priceSum;
+    this.priceSum = this.priceText.split('，')
+      .filter(price => price !== '')
+      .map(price => parseInt(price, 10))
+      .reduce(((previousValue, currentValue) => currentValue += previousValue), 0);
+  }
 
-	clear() {
-		this.priceText = "";
-	}
+  clear() {
+    this.priceText = '';
+  }
 
 }
