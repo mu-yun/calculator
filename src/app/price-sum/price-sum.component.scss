@@ -13,8 +13,21 @@
   @include center;
 }
 
-.display-area{
-  height: 60px;
+.display-area {
+  @include center;
   flex-direction: column;
   text-align: center;
+  height: 150px;
 }
+
+.text-area > * {
+  width: 90%;
+}
+
+.actions {
+  @include center;
+  button {
+    margin-left: 8px;
+  }
+}
+

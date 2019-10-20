@@ -1,53 +1,32 @@
-// [nz-menu] {
-//     width: 240px;
-// }
-
-.page-root {
-   display: flex;
-   flex-direction: row;
-   flex-wrap: nowrap;
-  height: 100%;
-  width: 100%;
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.trigger {
-  font-size: 18px;
-  line-height: 64px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: color 0.3s;
+.is-mobile .toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
 }
 
-.trigger:hover {
-  color: #1890ff;
+h1.app-name {
+  margin-left: 8px;
 }
 
-.logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
+//TODO
+.sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
 }
-
-nz-header {
-  background: #fff;
-  padding: 0;
-}
-
-   nz-content {
-     margin: 0 6px;
-   }
-
-nz-breadcrumb {
-  margin: 16px 0;
-}
-
-.inner-content {
-  padding: 24px;
-  background: #fff;
-  height: 100%;
-  // max-height: 360px;
-}
-
-nz-footer {
-  text-align: center;
+//TODO
+.is-mobile .sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
 }

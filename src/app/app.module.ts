@@ -4,7 +4,6 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NgZorroAntdModule, NZ_I18N, zh_CN} from 'ng-zorro-antd';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {registerLocaleData, CommonModule} from '@angular/common';
@@ -15,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
 
 registerLocaleData(zh);
 
@@ -27,7 +27,6 @@ registerLocaleData(zh);
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgZorroAntdModule,
     MatSliderModule,
     MatIconModule,
     MatFormFieldModule,
@@ -35,9 +34,12 @@ registerLocaleData(zh);
     MatButtonModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
   ],
-  providers: [{provide: NZ_I18N, useValue: zh_CN}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
