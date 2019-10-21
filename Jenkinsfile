@@ -2,23 +2,11 @@ pipeline {
   agent none
   stages {
     stage('install') {
-      agent {
-        node {
-          label 'node'
-        }
-
-      }
       steps {
         sh 'npm i'
       }
     }
     stage('build') {
-      agent {
-        node {
-          label 'node'
-        }
-
-      }
       steps {
         sh 'ng build --prod'
       }
