@@ -3,6 +3,10 @@
   justify-content: center;
 }
 
+.title{
+  margin: 15px;
+}
+
 .body {
   @include center;
   flex-direction: column;
@@ -27,7 +31,7 @@
 .actions {
   @include center;
   button {
-    margin-left: 8px;
+    margin-left: 10px;
   }
 }
 
