@@ -15,9 +15,17 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content>
+    <mat-sidenav-content class="content">
       <router-outlet></router-outlet>
+      <div class="footer">
+        <mat-divider [inset]="true" class="divider"></mat-divider>
+        <div class="record">
+          <a href="http://beian.miit.gov.cn">晋ICP备19012102号</a>
+          <span>Copyright © 2020 By Muyun &nbsp;</span>
+        </div>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
-
+  
 </div>
+
