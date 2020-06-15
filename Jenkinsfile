@@ -1,21 +1,19 @@
 pipeline {
   agent none
   stages {
-    stage('deploy') {
-      agent {
-        node {
-          label 'master'
-        }
-
+    stage('Build') { 
+      steps {
+        sh 'npm i'
+        sh 'ng build --prod'
       }
+    }
+    stage('Deploy') {
       environment {
         PROJECT_HOME = '/opt/projects/calculator'
       }
       steps {
-        sh '''npm i
-ng build --prod
-rm -rf $PROJECT_HOME/*
-mv dist/calculator/* $PROJECT_HOME'''
+        sh 'rm -rf $PROJECT_HOME/*'
+        sh 'mv dist/calculator/* $PROJECT_HOME'
       }
     }
   }
